@@ -1,8 +1,10 @@
 Kaplan et al., 2020 — Scaling Laws for Neural Language Models
-(OpenAI) The original transformer scaling law paper. Read for:
+(OpenAI) 
 
-loss ∝ N^−α behaviour
+Training budget is finite: how to allocate it efficienty  (optimization)
 
-dataset vs model vs compute scaling
+Used cross entropy loss to track the dependence between performance and data size, model size and compute time: signigicant changes
 
-early “50% rule” intuition Still required reading.
+Insignificant: network architecture (deapth/width)  
+
+
