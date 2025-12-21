@@ -15,7 +15,12 @@ Characteristics of the financial data:
 
 **Benchmarks**: vs linear models, ensemble models, neural networks.
 Tested across major markets: United States, Hong Kong, Taiwan, South Korea, Germany, the United Kingdom, India, and Australia.
-  
+
+**Evaluations**: 
+
+- statistical perspective: out-of-sample forecasting under expanding-window design
+
+- economic perspective: portfolio assessment
 
   Main focus of TSFM: learn temporary regularities (e.g. seasonality, volatility clustering, long-memory features) as reusable representations that can be adapted to domain-specific tasks.
   
