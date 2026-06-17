@@ -55,3 +55,12 @@
   the 8 unmatched devices (21K events from people we can't name); the 11 test/researcher are correctly out of scope.
   ⎿  Stop says: Reminder: before stopping, append a one-line timestamped entry to /Users/e5028514/vas/research_log.md for any significant work this session — script runs, data
      manipulations, decisions, file outputs, or research findings. Skip if the turn was purely conversational with no file changes.
+
+____________
+
+## AWARE
+
+
+  - Wave 1 (AWARE) = 2021-11-01 → 2022-05-30
+  - Wave 2 (AWARE) = 2022-05-30 → 2023-01-09
+  - Wave 3 (AWARE) = 2023-01-09 → now
