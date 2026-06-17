@@ -130,3 +130,38 @@ Fitbit wave start-dates
   2. Per-participant Fitbit wave windows — accurate, wave-based, dates sourced from Fitbit; handles the rolling recruitment. (W1 would capture the ~58 participants with W1
   Fitbit, where AWARE overlaps.)
  
+the waves overlap heavily at the sample level. Hard evidence:
+
+  Per-participant W1/W2 Fitbit windows (252 participants have both)
+
+  ┌────────────────────────────────────────────────────────────────┬─────────────────────────────────────────┐
+  │                              Test                              │                 Result                  │
+  ├────────────────────────────────────────────────────────────────┼─────────────────────────────────────────┤
+  │ W1 entirely before W2 within each participant                  │ 245 / 252 ✓ (clean individual ordering) │
+  ├────────────────────────────────────────────────────────────────┼─────────────────────────────────────────┤
+  │ W1 sample window (across participants)                         │ 2021-11-01 → 2023-02-11                 │
+  ├────────────────────────────────────────────────────────────────┼─────────────────────────────────────────┤
+  │ W2 sample window (across participants)                         │ 2022-01-23 → 2023-12-01                 │
+  ├────────────────────────────────────────────────────────────────┼─────────────────────────────────────────┤
+  │ Latest W1 ends (2023-02-11) vs earliest W2 starts (2022-01-23) │ W1 and W2 calendar ranges OVERLAP       │
+  ├────────────────────────────────────────────────────────────────┼─────────────────────────────────────────┤
+  │ Earliest participant to finish Wave 2                          │ 2022-06-05                              │
+  ├────────────────────────────────────────────────────────────────┼─────────────────────────────────────────┤
+  │ Participants whose Wave 1 starts after that                    │ 200                                     │
+  ├────────────────────────────────────────────────────────────────┼─────────────────────────────────────────┤
+  │ A single global W1|W2 cutoff that separates everyone           │ does not exist                          │
+  └────────────────────────────────────────────────────────────────┴─────────────────────────────────────────┘
+
+  Conclusion (the thing you wanted confirmed)
+
+  200 participants were still doing Wave 1 after other participants had already finished Wave 2. The waves are staggered by rolling recruitment and overlap by more than a year
+  in calendar time. Therefore no global date cutoff can split the waves — participants must be analysed on individual (per-participant) wave windows, taken from each
+  participant's own Fitbit W1/W2/W3 dates.
+
+  This settles it: the AWARE split must use each participant's own Fitbit wave dates, not a global boundary. Within a participant the ordering is clean (W1 before W2 before W3),
+  so applying their personal Fitbit windows to their AWARE stream is well-defined.
+
+  Two minor things flagged: 7 of 252 participants have their W1 Fitbit overlapping their own W2 (likely bad dates or a mislabeled file) — I'll quarantine/inspect those before
+  the split.
+
+  The resolved method is: per-participant Fitbit wave windows → applied to that participant's AWARE data → Wave 1 (primary), W2, W3 segments. 
